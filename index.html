@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gatefun 有角度代币列表</title>
+    <meta name="description" content="Gatefun 上链的有角度项目一览">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background: #0b0e17;
+            color: #fff;
+            line-height: 1.5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 16px;
+        }
+        h1 {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 30px;
+            color: #ffe600;
+        }
+        .token-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 20px;
+        }
+        .token-card {
+            background: #141721;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #252932;
+        }
+        .token-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.4);
+        }
+        .card-header {
+            height: 120px;
+            background: linear-gradient(135deg, #1f2633, #141721);
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .token-logo {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #ffe600;
+            background: #000;
+        }
+        .token-info h3 {
+            font-size: 20px;
+            margin-bottom: 4px;
+        }
+        .token-info span {
+            font-size: 14px;
+            color: #8a94a6;
+        }
+        .card-body {
+            padding: 20px;
+        }
+        .angle-desc {
+            font-size: 15px;
+            color: #c9d1d9;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            min-height: 72px;
+        }
+        .buy-btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background: #ffe600;
+            color: #000;
+            text-align: center;
+            border-radius: 8px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+        .buy-btn:hover {
+            background: #ffed4a;
+        }
+        .footer {
+            text-align: center;
+            padding: 40px 0 20px;
+            color: #4e5969;
+            font-size: 14px;
+        }
+
+        /* 手机端优化 */
+        @media (max-width: 768px) {
+            .token-list {
+                grid-template-columns: 1fr;
+            }
+            h1 { font-size: 24px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Gatefun 有角度项目一览</h1>
+
+        <div class="token-list">
+
+            <div class="token-card">
+                <div class="card-header">
+                    <img src="https://static-web3.w3-api.com/10088/0xf6d9cf57e20ba0d33372e8998a9424aa53411e04.png?v=0" alt="GDOG" class="token-logo">
+                    <div class="token-info">
+                        <h3>GDOG👑</h3>
+                        <span>Gdog</span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="angle-desc">
+                        GateLayer上的第一个狗主题代币。
+                    </div>
+                    <a href="https://web3.gate.com/zh/trade/gatelayer/0xf6d9cf57e20ba0d33372e8998a9424aa53411e04" target="_blank" class="buy-btn">立即交易</a>
+                </div>
+            </div>
+
+            <div class="token-card">
+                <div class="card-header">
+                    <img src="https://static-web3.w3-api.com/10088/0xd30d04405bbeb573ce4d8697fb4b3bcda6eb1777.png?v=0" alt="GCAT" class="token-logo">
+                    <div class="token-info">
+                        <h3>GCAT</h3>
+                        <span>GCAT</span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="angle-desc">
+                        Gatefun上猫主题第一名代币。
+                    </div>
+                    <a href="https://web3.gate.com/zh/trade/gatelayer/0xd30d04405bbeb573ce4d8697fb4b3bcda6eb1777" target="_blank" class="buy-btn">立即交易</a>
+                </div>
+            </div>
+			
+            <div class="token-card">
+                <div class="card-header">
+                    <img src="https://static-web3.w3-api.com/10088/0xa18b710053ddbd44eba11f9f8e43a717bf1f6454.png?v=0" alt="GEGE" class="token-logo">
+                    <div class="token-info">
+                        <h3>GEGE</h3>
+                        <span>GEGE</span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="angle-desc">
+                        Gatefun上佩佩主题的令牌。
+                    </div>
+                    <a href="https://web3.gate.com/zh/trade/gatelayer/0xa18b710053ddbd44eba11f9f8e43a717bf1f6454" target="_blank" class="buy-btn">立即交易</a>
+                </div>
+            </div>
+			
+            <div class="token-card">
+                <div class="card-header">
+                    <img src="https://static-web3.w3-api.com/10088/0x8c3c849321cac80490cb0a96bb8f8a702038f2e4.png?v=0" alt="GRABBIT" class="token-logo">
+                    <div class="token-info">
+                        <h3>GRABBIT</h3>
+                        <span>Gate Rabbit</span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="angle-desc">
+                        Gatefun上兔子主题的令牌，灵感来自GateLayer官推的推文。
+                    </div>
+                    <a href="https://web3.gate.com/zh/trade/gatelayer/0x8c3c849321cac80490cb0a96bb8f8a702038f2e4" target="_blank" class="buy-btn">立即交易</a>
+                </div>
+            </div>
+
+            <div class="token-card">
+                <div class="card-header">
+                    <img src="https://static-web3.w3-api.com/10088/0x8b78ddf4c0908f3ddb23f27d8bd06b9daab8c7e2.png?v=0" alt="TEST" class="token-logo">
+                    <div class="token-info">
+                        <h3>TEST</h3>
+                        <span>TEST</span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="angle-desc">
+                        Gatefun上由Gate官方部署的测试代币。
+                    </div>
+                    <a href="https://web3.gate.com/zh/trade/gatelayer/0x8b78ddf4c0908f3ddb23f27d8bd06b9daab8c7e2" target="_blank" class="buy-btn">立即交易</a>
+                </div>
+            </div>
+			
+            <div class="token-card">
+                <div class="card-header">
+                    <img src="https://static-web3.w3-api.com/10088/0xfb7a49bd483de0f2ed479f82a3f7f7f53e9e4057.png?v=0" alt="GM" class="token-logo">
+                    <div class="token-info">
+                        <h3>GM</h3>
+                        <span>Gmeme</span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="angle-desc">
+                        GM=早安。
+                    </div>
+                    <a href="https://web3.gate.com/zh/trade/gatelayer/0xfb7a49bd483de0f2ed479f82a3f7f7f53e9e4057" target="_blank" class="buy-btn">立即交易</a>
+                </div>
+            </div>
+			
+            <div class="token-card">
+                <div class="card-header">
+                    <img src="https://static-web3.w3-api.com/10088/0x284938c2a0ae7bdca8563270134850bfb51a9332.png?v=0" alt="GN" class="token-logo">
+                    <div class="token-info">
+                        <h3>GN</h3>
+                        <span>Gn</span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="angle-desc">
+                        GN=晚安。
+                    </div>
+                    <a href="https://web3.gate.com/zh/trade/gatelayer/0x284938c2a0ae7bdca8563270134850bfb51a9332" target="_blank" class="buy-btn">立即交易</a>
+                </div>
+            </div>
+			
+            <div class="token-card">
+                <div class="card-header">
+                    <img src="https://static-web3.w3-api.com/10088/0x49bd355350370d86d9ffe92adcadf4760488c6e8.png?v=1760948868" alt="芝麻开门" class="token-logo">
+                    <div class="token-info">
+                        <h3>芝麻开门</h3>
+                        <span>芝麻开门</span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="angle-desc">
+                        Gatefun上的中文meme。
+                    </div>
+                    <a href="https://web3.gate.com/zh/trade/gatelayer/0x49bd355350370d86d9ffe92adcadf4760488c6e8" target="_blank" class="buy-btn">立即交易</a>
+                </div>
+            </div>
+			
+            <div class="token-card">
+                <div class="card-header">
+                    <img src="https://static-web3.w3-api.com/10088/0x1033ba363b2da4a759ac35759ab6018c11f64099.png?v=0" alt="MINA" class="token-logo">
+                    <div class="token-info">
+                        <h3>MINA</h3>
+                        <span>Mina</span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="angle-desc">
+                        Gatefun上的名人代币，Mina是Gate VIP Manager | VIP经理。
+                    </div>
+                    <a href="https://web3.gate.com/zh/trade/gatelayer/0x1033ba363b2da4a759ac35759ab6018c11f64099" target="_blank" class="buy-btn">立即交易</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer">
+            Gatefun 有角度项目持续更新 · 仅供参考，投资有风险
+        </div>
+    </div>
+</body>
+</html>
