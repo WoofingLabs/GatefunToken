@@ -12,6 +12,7 @@
             background: #0b0e17;
             color: #fff;
             line-height: 1.5;
+            min-height: 100vh;
         }
         .container {
             max-width: 1200px;
@@ -21,8 +22,36 @@
         h1 {
             text-align: center;
             font-size: 28px;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             color: #ffe600;
+        }
+        .tabs {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+        .tab-btn {
+            padding: 10px 20px;
+            background: #141721;
+            border: 1px solid #252932;
+            border-radius: 8px;
+            color: #c9d1d9;
+            font-size: 15px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .tab-btn.active {
+            background: #ffe600;
+            color: #000;
+            font-weight: bold;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
         }
         .token-list {
             display: grid;
@@ -33,8 +62,8 @@
             background: #141721;
             border-radius: 12px;
             overflow: hidden;
-            transition: transform 0.3s, box-shadow 0.3s;
             border: 1px solid #252932;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
         .token-card:hover {
             transform: translateY(-8px);
@@ -62,7 +91,10 @@
         }
         .token-info span {
             font-size: 14px;
-            color: #8a94a6;
+            padding: 4px 10px;
+            border-radius: 6px;
+            background: rgba(255,230,0,0.2);
+            color: #ffe600;
         }
         .card-body {
             padding: 20px;
@@ -91,17 +123,14 @@
         }
         .footer {
             text-align: center;
-            padding: 40px 0 20px;
+            padding: 50px 0 20px;
             color: #4e5969;
             font-size: 14px;
         }
-
-        /* 手机端优化 */
         @media (max-width: 768px) {
-            .token-list {
-                grid-template-columns: 1fr;
-            }
             h1 { font-size: 24px; }
+            .token-list { grid-template-columns: 1fr; }
+            .tab-btn { font-size: 14px; padding: 10px 16px; }
         }
     </style>
 </head>
@@ -109,189 +138,193 @@
     <div class="container">
         <h1>Gatefun 有角度项目一览</h1>
 
-        <div class="token-list">
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="dispersed">✅ 筹码分散</button>
+            <button class="tab-btn" data-tab="early">🚀 早期PVP</button>
+            <button class="tab-btn" data-tab="highcontrol">⚠️ 高控代币</button>
+        </div>
 
-            <div class="token-card">
-                <div class="card-header">
-                    <img src="https://static-web3.w3-api.com/10088/0xf6d9cf57e20ba0d33372e8998a9424aa53411e04.png?v=0" alt="GDOG" class="token-logo">
-                    <div class="token-info">
-                        <h3>GDOG👑</h3>
-                        <span>✅筹码分散</span>
+        <div id="dispersed" class="tab-content active">
+            <div class="token-list">
+                <div class="token-card">
+                    <div class="card-header">
+                        <img src="https://static-web3.w3-api.com/10088/0xf6d9cf57e20ba0d33372e8998a9424aa53411e04.png?v=0" alt="GDOG" class="token-logo">
+                        <div class="token-info">
+                            <h3>GDOG👑</h3>
+                            <span>✅筹码分散</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="angle-desc">GateLayer上的第一个狗主题代币。</div>
+                        <a href="https://web3.gate.com/zh/trade/gatelayer/0xf6d9cf57e20ba0d33372e8998a9424aa53411e04" target="_blank" class="buy-btn">立即交易</a>
                     </div>
                 </div>
-                <div class="card-body">
-                    <div class="angle-desc">
-                        GateLayer上的第一个狗主题代币。
-                    </div>
-                    <a href="https://web3.gate.com/zh/trade/gatelayer/0xf6d9cf57e20ba0d33372e8998a9424aa53411e04" target="_blank" class="buy-btn">立即交易</a>
-                </div>
-            </div>
 
-            <div class="token-card">
-                <div class="card-header">
-                    <img src="https://static-web3.w3-api.com/10088/0xd30d04405bbeb573ce4d8697fb4b3bcda6eb1777.png?v=0" alt="GCAT" class="token-logo">
-                    <div class="token-info">
-                        <h3>GCAT</h3>
-                        <span>✅筹码分散</span>
+                <div class="token-card">
+                    <div class="card-header">
+                        <img src="https://static-web3.w3-api.com/10088/0xd30d04405bbeb573ce4d8697fb4b3bcda6eb1777.png?v=0" alt="GCAT" class="token-logo">
+                        <div class="token-info">
+                            <h3>GCAT</h3>
+                            <span>✅筹码分散</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="angle-desc">Gatefun上猫主题第一名代币。</div>
+                        <a href="https://web3.gate.com/zh/trade/gatelayer/0xd30d04405bbeb573ce4d8697fb4b3bcda6eb1777" target="_blank" class="buy-btn">立即交易</a>
                     </div>
                 </div>
-                <div class="card-body">
-                    <div class="angle-desc">
-                        Gatefun上猫主题第一名代币。
-                    </div>
-                    <a href="https://web3.gate.com/zh/trade/gatelayer/0xd30d04405bbeb573ce4d8697fb4b3bcda6eb1777" target="_blank" class="buy-btn">立即交易</a>
-                </div>
-            </div>
-			
-            <div class="token-card">
-                <div class="card-header">
-                    <img src="https://static-web3.w3-api.com/10088/0xa18b710053ddbd44eba11f9f8e43a717bf1f6454.png?v=0" alt="GEGE" class="token-logo">
-                    <div class="token-info">
-                        <h3>GEGE</h3>
-                        <span>🚀早期PVP</span>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <div class="angle-desc">
-                        Gatefun上佩佩主题的令牌。
-                    </div>
-                    <a href="https://web3.gate.com/zh/trade/gatelayer/0xa18b710053ddbd44eba11f9f8e43a717bf1f6454" target="_blank" class="buy-btn">立即交易</a>
-                </div>
-            </div>
-			
-            <div class="token-card">
-                <div class="card-header">
-                    <img src="https://static-web3.w3-api.com/10088/0x8c3c849321cac80490cb0a96bb8f8a702038f2e4.png?v=0" alt="GRABBIT" class="token-logo">
-                    <div class="token-info">
-                        <h3>GRABBIT</h3>
-                        <span>🚀早期PVP</span>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <div class="angle-desc">
-                        Gatefun上兔子主题的令牌，灵感来自GateLayer官推的推文。
-                    </div>
-                    <a href="https://web3.gate.com/zh/trade/gatelayer/0x8c3c849321cac80490cb0a96bb8f8a702038f2e4" target="_blank" class="buy-btn">立即交易</a>
-                </div>
-            </div>
 
-            <div class="token-card">
-                <div class="card-header">
-                    <img src="https://static-web3.w3-api.com/10088/0x8b78ddf4c0908f3ddb23f27d8bd06b9daab8c7e2.png?v=0" alt="TEST" class="token-logo">
-                    <div class="token-info">
-                        <h3>TEST</h3>
-                        <span>✅筹码分散</span>
+                <div class="token-card">
+                    <div class="card-header">
+                        <img src="https://static-web3.w3-api.com/10088/0x8b78ddf4c0908f3ddb23f27d8bd06b9daab8c7e2.png?v=0" alt="TEST" class="token-logo">
+                        <div class="token-info">
+                            <h3>TEST</h3>
+                            <span>✅筹码分散</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="angle-desc">Gatefun上由Gate官方部署的测试代币。</div>
+                        <a href="https://web3.gate.com/zh/trade/gatelayer/0x8b78ddf4c0908f3ddb23f27d8bd06b9daab8c7e2" target="_blank" class="buy-btn">立即交易</a>
                     </div>
                 </div>
-                <div class="card-body">
-                    <div class="angle-desc">
-                        Gatefun上由Gate官方部署的测试代币。
-                    </div>
-                    <a href="https://web3.gate.com/zh/trade/gatelayer/0x8b78ddf4c0908f3ddb23f27d8bd06b9daab8c7e2" target="_blank" class="buy-btn">立即交易</a>
-                </div>
-            </div>
-			
-            <div class="token-card">
-                <div class="card-header">
-                    <img src="https://static-web3.w3-api.com/10088/0xfb7a49bd483de0f2ed479f82a3f7f7f53e9e4057.png?v=0" alt="GM" class="token-logo">
-                    <div class="token-info">
-                        <h3>GM</h3>
-                        <span>❓高控代币</span>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <div class="angle-desc">
-                        GM=早安。
-                    </div>
-                    <a href="https://web3.gate.com/zh/trade/gatelayer/0xfb7a49bd483de0f2ed479f82a3f7f7f53e9e4057" target="_blank" class="buy-btn">立即交易</a>
-                </div>
-            </div>
-			
-            <div class="token-card">
-                <div class="card-header">
-                    <img src="https://static-web3.w3-api.com/10088/0x284938c2a0ae7bdca8563270134850bfb51a9332.png?v=0" alt="GN" class="token-logo">
-                    <div class="token-info">
-                        <h3>GN</h3>
-                        <span>✅筹码分散</span>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <div class="angle-desc">
-                        GN=晚安。
-                    </div>
-                    <a href="https://web3.gate.com/zh/trade/gatelayer/0x284938c2a0ae7bdca8563270134850bfb51a9332" target="_blank" class="buy-btn">立即交易</a>
-                </div>
-            </div>
-			
-            <div class="token-card">
-                <div class="card-header">
-                    <img src="https://static-web3.w3-api.com/10088/0x49bd355350370d86d9ffe92adcadf4760488c6e8.png?v=1760948868" alt="芝麻开门" class="token-logo">
-                    <div class="token-info">
-                        <h3>芝麻开门</h3>
-                        <span>⚠️高控代币</span>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <div class="angle-desc">
-                        Gatefun上的中文meme。
-                    </div>
-                    <a href="https://web3.gate.com/zh/trade/gatelayer/0x49bd355350370d86d9ffe92adcadf4760488c6e8" target="_blank" class="buy-btn">立即交易</a>
-                </div>
-            </div>
 
-            <div class="token-card">
-                <div class="card-header">
-                    <img src="https://static-web3.w3-api.com/10088/0x97abc4fde78835f0d8ed35d2247b1479aef73924.png?v=0" alt="GO" class="token-logo">
-                    <div class="token-info">
-                        <h3>GO</h3>
-                        <span>🚀早期PVP</span>
+                <div class="token-card">
+                    <div class="card-header">
+                        <img src="https://static-web3.w3-api.com/10088/0x284938c2a0ae7bdca8563270134850bfb51a9332.png?v=0" alt="GN" class="token-logo">
+                        <div class="token-info">
+                            <h3>GN</h3>
+                            <span>✅筹码分散</span>
+                        </div>
                     </div>
-                </div>
-                <div class="card-body">
-                    <div class="angle-desc">
-                        MemeGo是Gate Web3常用的表情包，具有Gate web3的meme精神和文化，这是一只佩佩，也代表MemeGo的meme传递！
+                    <div class="card-body">
+                        <div class="angle-desc">GN=晚安。</div>
+                        <a href="https://web3.gate.com/zh/trade/gatelayer/0x284938c2a0ae7bdca8563270134850bfb51a9332" target="_blank" class="buy-btn">立即交易</a>
                     </div>
-                    <a href="https://web3.gate.com/zh/trade/gatelayer/0x97abc4fde78835f0d8ed35d2247b1479aef73924" target="_blank" class="buy-btn">立即交易</a>
                 </div>
             </div>
+        </div>
 
-            <div class="token-card">
-                <div class="card-header">
-                    <img src="https://static-web3.w3-api.com/10088/0x373a29126a1c61a969bcc78904c99e62ab74542b.png?v=0" alt="G" class="token-logo">
-                    <div class="token-info">
-                        <h3>G</h3>
-                        <span>🚀早期PVP</span>
+        <div id="early" class="tab-content">
+            <div class="token-list">
+                <div class="token-card">
+                    <div class="card-header">
+                        <img src="https://static-web3.w3-api.com/10088/0xa18b710053ddbd44eba11f9f8e43a717bf1f6454.png?v=0" alt="GEGE" class="token-logo">
+                        <div class="token-info">
+                            <h3>GEGE</h3>
+                            <span>🚀早期PVP</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="angle-desc">Gatefun上佩佩主题的令牌。</div>
+                        <a href="https://web3.gate.com/zh/trade/gatelayer/0xa18b710053ddbd44eba11f9f8e43a717bf1f6454" target="_blank" class="buy-btn">立即交易</a>
                     </div>
                 </div>
-                <div class="card-body">
-                    <div class="angle-desc">
-                        $G - All in Web3！Gate一响，黄金万两！我们不是交易所，我们是信仰，是Web3的终极入口。
+
+                <div class="token-card">
+                    <div class="card-header">
+                        <img src="https://static-web3.w3-api.com/10088/0x8c3c849321cac80490cb0a96bb8f8a702038f2e4.png?v=0" alt="GRABBIT" class="token-logo">
+                        <div class="token-info">
+                            <h3>GRABBIT</h3>
+                            <span>🚀早期PVP</span>
+                        </div>
                     </div>
-                    <a href="https://web3.gate.com/zh/trade/gatelayer/0x373a29126a1c61a969bcc78904c99e62ab74542b" target="_blank" class="buy-btn">立即交易</a>
+                    <div class="card-body">
+                        <div class="angle-desc">Gatefun上兔子主题的令牌，灵感来自GateLayer官推的推文。</div>
+                        <a href="https://web3.gate.com/zh/trade/gatelayer/0x8c3c849321cac80490cb0a96bb8f8a702038f2e4" target="_blank" class="buy-btn">立即交易</a>
+                    </div>
+                </div>
+
+                <div class="token-card">
+                    <div class="card-header">
+                        <img src="https://static-web3.w3-api.com/10088/0x97abc4fde78835f0d8ed35d2247b1479aef73924.png?v=0" alt="GO" class="token-logo">
+                        <div class="token-info">
+                            <h3>GO</h3>
+                            <span>🚀早期PVP</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="angle-desc">MemeGo是Gate Web3常用的表情包，具有Gate web3的meme精神和文化，这是一只佩佩，也代表MemeGo的meme传递！</div>
+                        <a href="https://web3.gate.com/zh/trade/gatelayer/0x97abc4fde78835f0d8ed35d2247b1479aef73924" target="_blank" class="buy-btn">立即交易</a>
+                    </div>
+                </div>
+
+                <div class="token-card">
+                    <div class="card-header">
+                        <img src="https://static-web3.w3-api.com/10088/0x373a29126a1c61a969bcc78904c99e62ab74542b.png?v=0" alt="G" class="token-logo">
+                        <div class="token-info">
+                            <h3>G</h3>
+                            <span>🚀早期PVP</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="angle-desc">$G - All in Web3！Gate一响，黄金万两！我们不是交易所，我们是信仰，是Web3的终极入口。</div>
+                        <a href="https://web3.gate.com/zh/trade/gatelayer/0x373a29126a1c61a969bcc78904c99e62ab74542b" target="_blank" class="buy-btn">立即交易</a>
+                    </div>
+                </div>
+
+                <div class="token-card">
+                    <div class="card-header">
+                        <img src="https://static-web3.w3-api.com/10088/0xbff83b3e0c3cd385259e8b1648cb3e46d51614d8.png?v=0" alt="DYOR" class="token-logo">
+                        <div class="token-info">
+                            <h3>DYOR</h3>
+                            <span>🚀早期PVP</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="angle-desc">Gate Alpha官方推特在上币列出介绍时，把“DOYR ”写成“DYOR”，至此DOYR的叙事在Gate Web3上升级，由DOYR，重新回归到DYOR的错误编辑！</div>
+                        <a href="https://web3.gate.com/zh/trade/gatelayer/0xbff83b3e0c3cd385259e8b1648cb3e46d51614d8" target="_blank" class="buy-btn">立即交易</a>
+                    </div>
                 </div>
             </div>
+        </div>
 
-            <div class="token-card">
-                <div class="card-header">
-                    <img src="https://static-web3.w3-api.com/10088/0xbff83b3e0c3cd385259e8b1648cb3e46d51614d8.png?v=0" alt="DYOR" class="token-logo">
-                    <div class="token-info">
-                        <h3>DYOR</h3>
-                        <span>🚀早期PVP</span>
+        <div id="highcontrol" class="tab-content">
+            <div class="token-list">
+                <div class="token-card">
+                    <div class="card-header">
+                        <img src="https://static-web3.w3-api.com/10088/0xfb7a49bd483de0f2ed479f82a3f7f7f53e9e4057.png?v=0" alt="GM" class="token-logo">
+                        <div class="token-info">
+                            <h3>GM</h3>
+                            <span>⚠️高控代币</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="angle-desc">GM=早安。</div>
+                        <a href="https://web3.gate.com/zh/trade/gatelayer/0xfb7a49bd483de0f2ed479f82a3f7f7f53e9e4057" target="_blank" class="buy-btn">立即交易</a>
                     </div>
                 </div>
-                <div class="card-body">
-                    <div class="angle-desc">
-                        Gate Alpha官方推特在上币列出介绍时，把“DOYR ”写成“DYOR”，至此DOYR的叙事在Gate Web3上升级，由DOYR，重新回归到DYOR的错误编辑！
+
+                <div class="token-card">
+                    <div class="card-header">
+                        <img src="https://static-web3.w3-api.com/10088/0x49bd355350370d86d9ffe92adcadf4760488c6e8.png?v=1760948868" alt="芝麻开门" class="token-logo">
+                        <div class="token-info">
+                            <h3>芝麻开门</h3>
+                            <span>⚠️高控代币</span>
+                        </div>
                     </div>
-                    <a href="https://web3.gate.com/zh/trade/gatelayer/0xbff83b3e0c3cd385259e8b1648cb3e46d51614d8" target="_blank" class="buy-btn">立即交易</a>
+                    <div class="card-body">
+                        <div class="angle-desc">Gatefun上的中文meme。</div>
+                        <a href="https://web3.gate.com/zh/trade/gatelayer/0x49bd355350370d86d9ffe92adcadf4760488c6e8" target="_blank" class="buy-btn">立即交易</a>
+                    </div>
                 </div>
             </div>
-
         </div>
 
         <div class="footer">
             Gatefun 有角度项目持续更新 · 仅供参考，投资有风险
         </div>
     </div>
+
+    <script>
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                
+                btn.classList.add('active');
+                document.getElementById(btn.dataset.tab).classList.add('active');
+            });
+        });
+    </script>
 </body>
 </html>
